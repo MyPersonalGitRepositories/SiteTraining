@@ -51,8 +51,16 @@ header{
   width: 100%;
   position: fixed;
   z-index: 9999;
-  background: rgba(103, 103, 103, 0.83);
+    /*background: rgba(103, 103, 103, 0.83);*/
   /*overflow: visible;*/
+}
+
+.solid {
+    border: 2px solid black;
+}
+
+.dashed {
+    border-top: 2px dashed black;
 }
 .panel-footer {
   margin-top: 30px;

@@ -224,17 +224,20 @@ del{
 }
 
 @media (max-width: 767px) {
-  .navbar-brand {
-    /*padding-top: 10px;*/
-    /*height: 80px;*/
-  }
+    .text {
+        padding-top: 40px;
+    }
+
+    .item {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 
   .navbar-brand h1 { /* Restaurant name */
-    /*padding-top: 10px;*/
     font-size: 5vw; /* 1vw = 1% of viewport width */
   }
 
-  #collapsable-nav a { /* Collapsed nav menu text */
+    #collapsable-nav a {
     font-size: 1.2em;
   }
 

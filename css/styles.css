@@ -1,5 +1,6 @@
 *{
   position: relative;
+
 }
 body{
   background: url("../img/back.jpg");
@@ -9,6 +10,22 @@ a {
   text-decoration: none;
 }
 
+.slider-container {
+    padding-top: 75px;
+    width: 50%;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+
+}
+
+.slider img {
+    text-align: center;
+    margin: 15px auto 10px;
+    width: 50%;
+    height: 50%;
+}
 .navbar-brand {
   padding-top: 25px;
 }
@@ -46,8 +63,7 @@ a {
   padding-right: 15px;
 }
 header{
-  /*top: 0;*/
-  /*left: 0;*/
+    top: 0;
   width: 100%;
   position: fixed;
   z-index: 9999;
@@ -55,6 +71,9 @@ header{
   /*overflow: visible;*/
 }
 
+/*footer{*/
+/* */
+/*}*/
 .solid {
     border: 2px solid black;
 }
@@ -90,52 +109,6 @@ header{
   margin-top: 25px;
 }
 
-/*.logo {*/
-/*  width: 295px;*/
-/*  display: flex;*/
-/*}*/
-
-/*.img-logo {*/
-/*  width: 100%;*/
-/*}*/
-
-/*nav {*/
-/*  margin: auto;*/
-/*  width: 100%;*/
-/*  left: 0;*/
-/*}*/
-
-/*.topnav {*/
-/*  font-size: 14px;*/
-/*  padding-bottom:10px;*/
-/*}*/
-
-/*.topnav a {*/
-/*  color: #000;*/
-/*  left: 0;*/
-/*  width: 100px;*/
-/*  padding: 14px 16px;*/
-/*  font-size: 15px;*/
-/*}*/
-
-/*.topnav a:hover{
-    border-bottom: 2px solid #000000;
-}*/
-
-/*.container {*/
-/*  width: 60%;*/
-/*  margin: auto;*/
-/*  margin-top: 15px;*/
-/*  margin-bottom: 15px;*/
-/*  text-align: center;*/
-
-/*}*/
-
-.slider img{
-  width: 50%;
-  height: auto;
-}
-
 .text {
   padding-top: 7%;
   color: black;
@@ -143,6 +116,7 @@ header{
 
 .container-form {
   padding-bottom: 20px;
+    padding-top: 40px;
   width: 60%;
   margin: auto;
   margin-top: 50px;

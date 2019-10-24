@@ -64,6 +64,11 @@
                     </li>
                 </ul>
             </div>
+            <div>
+                <ul>
+
+                </ul>
+            </div>
         </div>
     </nav>
 </header>
@@ -95,46 +100,46 @@
                         </tbody>
                     </table>
                 </div>
-                <div>To pay: <span id="total-cart-summa"></span> hrn</div>
+                <div>To pay: <span id="total-cart-summa">0</span> hrn</div>
                 <br/>
                 <a class="btn btn-info" href="order.html">Place your order</a>
             </div>
 
-            <script id="cart-template" type="text/template">
-                <% _.each(goods, function(good) { %>
-                <tr class="cart-item js-cart-item" data-id="<%= good.id %>">
-                    <td><%= good.id %></td>
-                    <td><%- good.name %></td>
-                    <td><%= good.price %> руб.</td>
-                    <td>
-                    <span
-                            class="cart-item__btn-dec-count js-change-count"
-                            title="Уменьшить на 1"
-                            data-id="<%= good.id %>"
-                            data-delta="-1"
-                    >
-                        <span class="glyphicon glyphicon-minus"></span>
-                    </span>
-                        <span class="js-count"><%= good.count %></span>
-                        <span
-                                class="cart-item__btn-inc-count js-change-count"
-                                title="Увеличить на 1"
-                                data-id="<%= good.id %>"
-                                data-delta="1"
-                        >
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </span>
-                    </td>
-                    <td><span class="js-summa"><%= good.count * good.price %></span> руб.</td>
-                    <td>
-                    <span class="cart-item__btn-remove js-remove-from-cart" title="Удалить из корзины"
-                          data-id="<%= good.id %>">
-                        <span class="glyphicon glyphicon-remove"></span>
-                    </span>
-                    </td>
-                </tr>
-                <% }); %>
-            </script>
+            <!--            <script id="cart-template" type="text/template">-->
+            <!--                <% _.each(goods, function(good) { %>-->
+            <!--                <tr class="cart-item js-cart-item" data-id="<%= good.id %>">-->
+            <!--                    <td><%= good.id %></td>-->
+            <!--                    <td><%- good.name %></td>-->
+            <!--                    <td><%= good.price %> руб.</td>-->
+            <!--                    <td>-->
+            <!--                    <span-->
+            <!--                            class="cart-item__btn-dec-count js-change-count"-->
+            <!--                            title="Уменьшить на 1"-->
+            <!--                            data-id="<%= good.id %>"-->
+            <!--                            data-delta="-1"-->
+            <!--                    >-->
+            <!--                        <span class="glyphicon glyphicon-minus"></span>-->
+            <!--                    </span>-->
+            <!--                        <span class="js-count"><%= good.count %></span>-->
+            <!--                        <span-->
+            <!--                                class="cart-item__btn-inc-count js-change-count"-->
+            <!--                                title="Увеличить на 1"-->
+            <!--                                data-id="<%= good.id %>"-->
+            <!--                                data-delta="1"-->
+            <!--                        >-->
+            <!--                        <span class="glyphicon glyphicon-plus"></span>-->
+            <!--                    </span>-->
+            <!--                    </td>-->
+            <!--                    <td><span class="js-summa"><%= good.count * good.price %></span> hrn.</td>-->
+            <!--                    <td>-->
+            <!--                    <span class="cart-item__btn-remove js-remove-from-cart" title="Удалить из корзины"-->
+            <!--                          data-id="<%= good.id %>">-->
+            <!--                        <span class="glyphicon glyphicon-remove"></span>-->
+            <!--                    </span>-->
+            <!--                    </td>-->
+            <!--                </tr>-->
+            <!--                <% }); %>-->
+            <!--            </script>-->
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

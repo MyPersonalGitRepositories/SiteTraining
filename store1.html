@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 </head>
 <body>
 <header>
@@ -56,7 +55,7 @@
                         <div>* We deliver</div>
                     </li>
                     <li>
-                        <a href="cart.html">
+                        <a href="#myModalBox" id="btn">
                             <!--                            <br> Cart-->
                             <span class="glyphicon glyphicon-shopping-cart"></span>
                             <span id="total-cart-count" class="badge">
@@ -69,6 +68,82 @@
     </nav>
 </header>
 
+<div class="modal fade" id="myModalBox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Amount</th>
+                            <th>Sum</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody id="cart">
+                        <!--                        <tr><td colspan="6"><img src="img/loading.gif" alt="" /></td></tr>-->
+                        </tbody>
+                    </table>
+                </div>
+                <div>To pay: <span id="total-cart-summa"></span> hrn</div>
+                <br/>
+                <a class="btn btn-info" href="order.html">Place your order</a>
+            </div>
+
+            <script id="cart-template" type="text/template">
+                <% _.each(goods, function(good) { %>
+                <tr class="cart-item js-cart-item" data-id="<%= good.id %>">
+                    <td><%= good.id %></td>
+                    <td><%- good.name %></td>
+                    <td><%= good.price %> руб.</td>
+                    <td>
+                    <span
+                            class="cart-item__btn-dec-count js-change-count"
+                            title="Уменьшить на 1"
+                            data-id="<%= good.id %>"
+                            data-delta="-1"
+                    >
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </span>
+                        <span class="js-count"><%= good.count %></span>
+                        <span
+                                class="cart-item__btn-inc-count js-change-count"
+                                title="Увеличить на 1"
+                                data-id="<%= good.id %>"
+                                data-delta="1"
+                        >
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </span>
+                    </td>
+                    <td><span class="js-summa"><%= good.count * good.price %></span> руб.</td>
+                    <td>
+                    <span class="cart-item__btn-remove js-remove-from-cart" title="Удалить из корзины"
+                          data-id="<%= good.id %>">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </span>
+                    </td>
+                </tr>
+                <% }); %>
+            </script>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+</div>
+</div>
+
 
 <div class="container-fluid text-center">
     <div class="text-center  text ">
@@ -78,7 +153,7 @@
     <div class="text-left">
         <h2>Apple</h2>
     </div>
-    <div class="row">
+    <div id="goods" class="row list-unstyled">
         <div class="item">
             <img src="img/item.jpg" alt="">
             <div class="productName">
@@ -257,7 +332,6 @@
         <div class="text-center">&copy; Copyright My-Store 2019</div>
     </div>
 </footer>
-<script scr="js/jquery.cookie.js"></script>
 <script src="js/underscore.min.js"></script>
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
